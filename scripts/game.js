@@ -1,7 +1,7 @@
 const config = {
 	type: Phaser.AUTO,
-	width: 30 * 24,
-	height: 20 * 24,
+	width: 1000,
+	height: 1000,
 	physics: {
 		default: "arcade",
 		arcade: {
@@ -9,7 +9,6 @@ const config = {
 			debug: false, // Set to true if you want to see debug graphics
 		},
 	},
-	backgroundColor: "#337504",
 	scene: {
 		preload: preload,
 		create: create,

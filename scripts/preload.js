@@ -1,9 +1,9 @@
 function preload() {
 	// Load the knight's sprite sheets
-	this.load.tilemapTiledJSON("map", "assets/tilemaps/map1.json");
+	this.load.tilemapTiledJSON("map", "assets/tilemaps/newMap1.json");
 	this.load.image(
 		"tiles",
-		"assets/sprites/Environment/Green Woods/Assets/Tiles.png"
+		"assets/sprites/Environment/dungeon.png"
 	);
 	this.load.spritesheet(
 		"knight-idle-sheet",
