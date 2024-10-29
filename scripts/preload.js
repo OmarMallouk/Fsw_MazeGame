@@ -1,9 +1,17 @@
 function preloadLevel1() {
 	this.load.image('arrows', 'assets/sprites/projectiles/arrow.png'); 
-	this.load.tilemapTiledJSON("map", "assets/tilemaps/newMap1.json");
+	this.load.tilemapTiledJSON("map", "assets/tilemaps/level1.json");
 	this.load.image(
 		"tiles",
 		"assets/sprites/Environment/dungeon.png"
+	);
+	this.load.image(
+		"closeddoor",
+		"assets/sprites/Environment/closeddoor.png"
+	);
+	this.load.image(
+		"opendoor",
+		"assets/sprites/Environment/opendoor.png"
 	);
 	this.load.spritesheet(
 		"knight-idle-sheet",
