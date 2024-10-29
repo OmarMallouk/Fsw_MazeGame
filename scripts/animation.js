@@ -10,9 +10,10 @@ function rogueanimation() {
 			cursors.down.isDown
 		) {
 			state = "running";
-		} else if (cursors.space.isDown) {
-			state = "dead";
 		}
+		// } else if (cursors.space.isDown) {
+		// 	state = "dead";
+		// }
 	}
 	if (cursors.left.isDown) {
 		player.setFlipX(false);
@@ -71,9 +72,9 @@ function knightanimation() {
 			state = "idle";
 		}
 	}
-	if (state === "dead") {
-		player.anims.play("knight-death-anim", true);
-	}
+	// if (state === "dead") {
+	// 	player.anims.play("knight-death-anim", true);
+	// }
 	if (state === "idle") {
 		player.anims.play("knight-idle-anim", true);
 	}
@@ -91,9 +92,10 @@ function wizzardanimation() {
 		) {
 			state = "running";
 			player.body.setOffset(16, 0);
-		} else if (cursors.space.isDown) {
-			state = "dead";
 		}
+		// } else if (cursors.space.isDown) {
+		// 	state = "dead";
+		// }
 	}
 	if (cursors.left.isDown) {
 		player.setFlipX(false);

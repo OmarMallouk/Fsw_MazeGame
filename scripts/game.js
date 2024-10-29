@@ -38,7 +38,7 @@ function playerMovement() {
 		player.setVelocityY(160);
 	} else player.setVelocityY(0);
 }
-var charselect = "knight";
+var charselect = "rogue";
 var mapselect = "map1";
 function updateLevel1() {
 	if (charselect === "wizzard") wizzardanimation();
