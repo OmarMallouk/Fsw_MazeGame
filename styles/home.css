@@ -155,3 +155,36 @@ a {
         text-align: center;
     }
 }
+
+/*demo-section*/
+.demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../assets/parallax-background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.demo-content {
+    text-align: center;
+}
+
+.demo-content > h1 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+iframe {
+    width: 600px;
+    height: 400px;
+}
+
+@media (max-width: 700px) {
+    iframe {
+        width: 300px;
+        height: 200px;
+    }
+}
