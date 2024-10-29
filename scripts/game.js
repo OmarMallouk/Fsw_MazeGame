@@ -6,7 +6,7 @@ const configLevel1 = {
 		default: "arcade",
 		arcade: {
 			gravity: { y: 0 }, // No gravity
-			debug: true, // Set to true if you want to see debug graphics
+			debug: false, // Set to true if you want to see debug graphics
 		},
 	},
 	scene: {
@@ -38,6 +38,7 @@ function playerMovement() {
 		player.setVelocityY(160);
 	} else player.setVelocityY(0);
 }
+
 var charselect = "rogue";
 var mapselect = "map1";
 function updateLevel1() {
@@ -45,4 +46,10 @@ function updateLevel1() {
 	if (charselect === "knight") knightanimation();
 	if (charselect === "rogue") rogueanimation();
 	playerMovement();
+	if (hp <= 0)
+	{
+		alert("you lose")
+		hp = 5
+		window.location.reload();
+	}
 }

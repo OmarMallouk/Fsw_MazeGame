@@ -1,9 +1,13 @@
 var arrows;
-var shootleftlocations = [[810, 60]];
+var fireballs;
+var shootleftlocations = [
+	[810, 60],
+	[810, 70],
+];
 var shootrightlocations = [];
 var shootuplocations = [];
 var shootdownlocations = [];
-
+var hp = 5;
 function createLevel1() {
 	createanims();
 
@@ -22,10 +26,38 @@ function createLevel1() {
 
 	arrows = this.physics.add.group({
 		defaultKey: "arrows",
-		maxSize: 1000,
+		maxSize: -1,
 	});
-	this.physics.add.collider(arrows, Layer, function () {}, null, this);
 
+	fireballs = this.physics.add.group({
+		defaultKey: "fireball-anim",
+		maxSize: -1,
+	});
+
+	player.setImmovable(true);
+	this.physics.add.collider(arrows, Layer, function () {}, null, this);
+	this.physics.add.collider(
+		arrows,
+		player,
+		function (player, arrow) {
+			arrow.setActive(false);
+			arrow.setVisible(false);
+			hp--;
+		},
+		null,
+		this
+	);
+	this.physics.add.collider(
+		fireballs,
+		player,
+		function (player, fireball) {
+			fireball.setActive(false);
+			fireball.setVisible(false);
+			hp -= 2;
+		},
+		null,
+		this
+	);
 	this.time.addEvent({
 		delay: 500, // 500 milliseconds
 		callback: shootleft, // The function to execute
@@ -41,6 +73,10 @@ function shootup(x, y) {
 		arrow.setVisible(true);
 		arrow.setPosition(x, y);
 		arrow.setVelocityX(-600);
+		setTimeout(() => {
+			arrow.setActive(false);
+			arrow.setVisible(false);
+		}, 100);
 	}
 }
 

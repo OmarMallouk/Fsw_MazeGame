@@ -14,6 +14,14 @@ function preloadLevel1() {
 		}
 	);
 	this.load.spritesheet(
+		"fireball",
+		"assets/sprites/projectiles/fireball.png",
+		{
+			frameWidth: 64,
+			frameHeight: 32,
+		}
+	);
+	this.load.spritesheet(
 		"knight-run-sheet",
 		"assets/sprites/Heroes/Knight/Run/Run-Sheet.png",
 		{

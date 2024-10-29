@@ -132,7 +132,15 @@ function createanims() {
 		frameRate: 10,
 		repeat: -1, // Loop indefinitely
 	});
-
+	Level1.anims.create({
+		key: "fireball-anim",
+		frames: Level1.anims.generateFrameNumbers("fireball", {
+			start: 0,
+			end: 4,
+		}),
+		frameRate: 10,
+		repeat: -1,
+	});
 	Level1.anims.create({
 		key: "knight-run-anim",
 		frames: Level1.anims.generateFrameNumbers("knight-run-sheet", {
