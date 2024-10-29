@@ -1,4 +1,4 @@
-function preload() {
+function preloadLevel1() {
 	// Load the knight's sprite sheets
 	this.load.tilemapTiledJSON("map", "assets/tilemaps/newMap1.json");
 	this.load.image(

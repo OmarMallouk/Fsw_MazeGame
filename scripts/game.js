@@ -1,23 +1,23 @@
-const config = {
+const configLevel1 = {
 	type: Phaser.AUTO,
-	width: 1000,
-	height: 1000,
+	width: 30 * 32,
+	height: 20 * 32,
 	physics: {
 		default: "arcade",
 		arcade: {
 			gravity: { y: 0 }, // No gravity
-			debug: false, // Set to true if you want to see debug graphics
+			debug: true, // Set to true if you want to see debug graphics
 		},
 	},
 	scene: {
-		preload: preload,
-		create: create,
-		update: update,
+		preload: preloadLevel1,
+		create: createLevel1,
+		update: updateLevel1,
 	},
-	parent: "gameframe",
+	parent: "Level1frame",
 };
 
-const game = new Phaser.Game(config);
+const Level1 = new Phaser.Game(configLevel1);
 
 let player;
 
@@ -30,23 +30,19 @@ function playerMovement() {
 	} else if (cursors.right.isDown) {
 		player.setVelocityX(160);
 		player.setFlipX(false);
-	}
+	} else player.setVelocityX(0);
 
 	if (cursors.up.isDown) {
 		player.setVelocityY(-160);
 	} else if (cursors.down.isDown) {
 		player.setVelocityY(160);
-	}
+	} else player.setVelocityY(0);
 }
-var charselect = "wizzard";
+var charselect = "knight";
 var mapselect = "map1";
-function update() {
+function updateLevel1() {
 	if (charselect === "wizzard") wizzardanimation();
 	if (charselect === "knight") knightanimation();
 	if (charselect === "rogue") rogueanimation();
 	playerMovement();
-	if (player.x > 350 && player.x < 390 && player.y > 70 && player.y < 100) {
-		alert("you win");
-		this.scene.restart()
-	}
 }
