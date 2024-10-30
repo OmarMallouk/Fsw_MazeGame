@@ -1,28 +1,34 @@
-function createLevel1(window) {
-	createanims(window); //create animations
-
-	cursors = window.input.keyboard.createCursorKeys();// setup cursor
+function setlayers1(window) {
+	cursors = window.input.keyboard.createCursorKeys(); // setup cursor
 	map = window.make.tilemap({ key: "map" }); //load map
-	tileset = map.addTilesetImage("dungeon", "tiles"); // 
+	tileset = map.addTilesetImage("dungeon", "tiles"); //
 	GLayer = map.createLayer("Ground", tileset, 0, 0);
 	GLayer.setScale(1.4);
 	WLayer = map.createLayer("Walls", tileset, 0, 0);
 	WLayer.setCollisionByProperty({ collided: true });
 	WLayer.setScale(1.4);
+}
 
+function playersetup1(window) {
 	player = window.physics.add.sprite(200, 300, "rouge-idle-sheet");
 	player.anims.play("rogue-idle-anim");
 	player.body.setCollideWorldBounds(true);
 	window.physics.add.collider(player, WLayer);
+}
 
+function doors1(window) {
 	opendooorimg = window.add.image(67, 110, "opendoor");
 	opendooorimg.setScale(1.4);
 	closeddoorimg = window.add.image(67, 110, "closeddoor");
 	closeddoorimg.setScale(1.4);
+}
+
+function physicsgroups(window) {
+	// can be used across levels
 	arrows = window.physics.add.group({
 		defaultKey: "arrows",
-		maxSize: -1,//infinite arrows, set number to specify amount
-	}); 
+		maxSize: -1, //infinite arrows, set number to specify amount
+	});
 
 	fireballs = window.physics.add.group({
 		defaultKey: "fireball-anim",
@@ -33,15 +39,26 @@ function createLevel1(window) {
 		defaultKey: "coin-sheet",
 		maxSize: 10,
 	});
-//coin set function
+}
+
+function coinset() {
 	coin = coins.get();
 	coin.setActive(true);
 	coin.setVisible(true);
 	coin.setPosition(200, 200);
 	coin.play("coin-anim");
 	coin.scale = 1.2;
+}
 
-	player.setImmovable(true);//to make player unmovable by arrows
+function createLevel1(window) {
+	createanims(window); //create animations
+	setlayers1(window);
+	playersetup1(window);
+	doors1(window);
+	physicsgroups(window);
+	//coin set function
+
+	player.setImmovable(true); //to make player unmovable by arrows
 
 	window.physics.add.collider(
 		coins,
@@ -49,9 +66,8 @@ function createLevel1(window) {
 		function (player, coin) {
 			coin.setActive(false);
 			coin.setVisible(false);
-			coinscollected += 1
-			if (coinscollected == 1)
-				closeddoorimg.visible = false
+			coinscollected += 1;
+			if (coinscollected == 1) closeddoorimg.visible = false;
 		},
 		null,
 		window
@@ -90,8 +106,8 @@ function createLevel1(window) {
 		window
 	);
 	window.time.addEvent({
-		delay: 1000, 
-		callback: shootfireballs, // The function to execute
+		delay: 1000,
+		callback: shootfireballs1, // The function to execute
 		callbackScope: window, // The scope in which to execute the function
 		loop: true, // Set to true to repeat the event
 	});

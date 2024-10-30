@@ -1,6 +1,6 @@
-function shootup() {
+function shootup1() {
 	var arrow;
-	shootuplocations.forEach((location) => {
+	shootuplocations1.forEach((location) => {
 		arrow = arrows.get();
 		if (arrow) {
 			arrow.setAngle(-90); //image angle
@@ -11,9 +11,9 @@ function shootup() {
 		}
 	});
 }
-function shootdown() {
+function shootdown1() {
 	var arrow;
-	shootdownlocations.forEach((location) => {
+	shootdownlocations1.forEach((location) => {
 		arrow = arrows.get();
 		if (arrow) {
 			arrow.setAngle(180);
@@ -24,9 +24,9 @@ function shootdown() {
 		}
 	});
 }
-function shootleft() {
+function shootleft1() {
 	var arrow;
-	shootleftlocations.forEach((location) => {
+	shootleftlocations1.forEach((location) => {
 		arrow = arrows.get();
 		if (arrow) {
 			arrow.setAngle(-90);
@@ -37,9 +37,9 @@ function shootleft() {
 		}
 	});
 }
-function shootright() {
+function shootright1() {
 	var arrow;
-	shootrightlocations.forEach((location) => {
+	shootrightlocations1.forEach((location) => {
 		arrow = arrows.get();
 		if (arrow) {
 			arrow.setAngle(-90);
@@ -50,9 +50,9 @@ function shootright() {
 		}
 	});
 }
-function shootupFireball() {
+function shootupFireball1() {
 	var fireball;
-	shootuplocations.forEach((location) => {
+	shootuplocations1.forEach((location) => {
 		fireball = fireballs.get();
 		if (fireball) {
 			fireball.setAngle(-90);
@@ -63,9 +63,9 @@ function shootupFireball() {
 		}
 	});
 }
-function shootdownFireball() {
+function shootdownFireball1() {
 	var fireball;
-	shootdownlocations.forEach((location) => {
+	shootdownlocations1.forEach((location) => {
 		fireball = fireballs.get();
 		if (fireball) {
 			fireball.setAngle(90);
@@ -77,9 +77,9 @@ function shootdownFireball() {
 		}
 	});
 }
-function shootleftFireball() {
+function shootleftFireball1() {
 	var fireball;
-	shootleftlocations.forEach((location) => {
+	shootleftlocations1.forEach((location) => {
 		fireball = fireballs.get();
 		if (fireball) {
 			fireball.setAngle(180);
@@ -91,9 +91,9 @@ function shootleftFireball() {
 		}
 	});
 }
-function shootrightFireball() {
+function shootrightFireball1() {
 	var fireball;
-	shootrightlocations.forEach((location) => {
+	shootrightlocations1.forEach((location) => {
 		fireball = fireballs.get();
 		if (fireball) {
 			fireball.setAngle(-90);
@@ -104,17 +104,17 @@ function shootrightFireball() {
 		}
 	});
 }
-function shootfireballs()
+function shootfireballs1()
 {
-	shootdownFireball()
-	shootupFireball()
-	shootleftFireball()
-	shootrightFireball()
+	shootdownFireball1()
+	shootupFireball1()
+	shootleftFireball1()
+	shootrightFireball1()
 }
-function shootarrows()
+function shootarrows1()
 {
-	shootdown()
-	shootup()
-	shootleft()
-	shootright()
+	shootdown1()
+	shootup1()
+	shootleft1()
+	shootright1()
 }

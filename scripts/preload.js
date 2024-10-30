@@ -6,6 +6,14 @@ function preloadLevel1(window) {
 		"assets/sprites/Environment/dungeon.png"
 	);
 	window.load.image(
+		"fullheart",
+		"assets/sprites/Environment/fullheart.png"
+	);
+	window.load.image(
+		"emptyheart",
+		"assets/sprites/Environment/emptyheart.png"
+	);
+	window.load.image(
 		"closeddoor",
 		"assets/sprites/Environment/closeddoor.png"
 	);
