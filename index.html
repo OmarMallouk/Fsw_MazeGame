@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="./styles/home.css">
     <link rel="stylesheet" href="./styles/utilities.css">
     <link rel="stylesheet" href="./styles/cards.css">
+    <link rel="stylesheet" href="./styles/colors.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
     <title>Document</title>
 </head>
 <body>
-<nav class=" flex  navbar ">
-    <div class="nav-logo  ">
-        <img src="assets/labyrinth.png" alt="mazes">
+<nav class="flex  navbar primary-color">
+    <div class="nav-logo">
+        <img src="assets/siteImages/labyrinth.png" alt="mazes">
 
     </div>
 
@@ -40,89 +42,28 @@
     <p class="font-8vw text-stroke light-blue-txt">Realm of Heroes</p>
 </section>
 
-<div class="heroName"><h1>Heroes</h1></div>
-<div class="container1">
-    <div class="card">
-        <img src="assets/leon.png" alt="Person" class="card__image">
-        <p class="card__name">Leon</p>
-        <div class="flex-container">
+<section class="character-section">
+    <div class="heroName"><h1>Heroes</h1></div>
+    <div class="cards">
+        <div class="card">
+            <img src="assets/siteImages/knight.png" alt="Person" class="card__image">
+            <p class="card__name font-2vw names-font">Knight</p>
 
-            <div class="flex-child-posts">
-                Speed
-            </div>
 
-            <div class="flex-child-followers">
-                Lives
-            </div>
-
+            <button class="btn draw-border">Start</button>
         </div>
-        <div class="social-icons">
-            <div class="img1">
-                <img src="assets/speed.jpg" alt="">
-            </div>
-
-            <div class="img1">
-                <img src="assets/heart2.webp" alt="">
-            </div>
+        <div class="card">
+            <img src="assets/siteImages/wizard.png" alt="Person" class="card__image">
+            <p class="card__name font-2vw names-font">Wizard</p>
+            <button class="btn draw-border">Start</button>
         </div>
-        <button class="btn draw-border">Start</button>
-
+        <div class="card">
+            <img src="assets/siteImages/rogue.png" alt="Person" class="card__image">
+            <p class="card__name font-2vw names-font">Rogue</p>
+            <button class="btn draw-border">Start</button>
+        </div>
     </div>
-
-    <div class="card">
-        <img src="assets/jill.png" alt="Person" class="card__image">
-        <p class="card__name">Jill</p>
-        <div class="flex-container">
-
-            <div class="flex-child-posts">
-                Speed
-            </div>
-
-            <div class="flex-child-followers">
-                Lives
-            </div>
-
-        </div>
-        <div class="social-icons">
-            <div class="img1">
-                <img src="assets/speed.jpg" alt="">
-            </div>
-
-            <div class="img1">
-                <img src="assets/heart2.webp" alt="">
-            </div>
-        </div>
-        <button class="btn draw-border">Start</button>
-
-    </div>
-    <div class="card">
-        <img src="assets/luis.png" alt="Person" class="card__image">
-        <p class="card__name">Luis</p>
-        <div class="flex-container">
-
-            <div class="flex-child-posts">
-                Speed
-            </div>
-
-            <div class="flex-child-followers">
-                Lives
-            </div>
-
-        </div>
-        <div class="social-icons">
-            <div class="img1">
-                <img src="assets/speed.jpg" alt="">
-            </div>
-
-            <div class="img1">
-                <img src="assets/heart2.webp" alt="">
-            </div>
-        </div>
-        <button class="btn draw-border">Start</button>
-
-
-    </div>
-</div>
+</section>
 
 <section class="demo">
     <div class="demo-content">
@@ -135,7 +76,7 @@
 
 <footer class="footer">
     <div class="footer-content">
-        <img src="assets/labyrinth.png" alt="logo" class="logo">
+        <img src="assets/siteImages/labyrinth.png" alt="logo" class="logo">
 
         <div class="footer-links">
             <a href="#">Support</a>

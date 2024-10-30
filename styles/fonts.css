@@ -2,3 +2,11 @@
     font-size: 8vw;
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.names-font {
+    font-family: "Lucida Bright", cursive;
+}
+

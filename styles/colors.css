@@ -37,3 +37,8 @@
 .text-stroke {
     -webkit-text-stroke: 2px black;
 }
+
+.primary-color {
+    background-color: #0C1C2C;
+}
+

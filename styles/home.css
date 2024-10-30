@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Press Start 2P';
+    src: url('fonts/BebasNeue-Regular.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Press Start 2P', sans-serif;
+}
+
 img {
     width: 100%;
     height: 100%;
@@ -39,9 +48,6 @@ a {
     width: 100%;
     padding: 0 25px;
     align-items: center;
-    background-color: black;
-    border-radius: 20px;
-    border-color: black;
 }
 
 .nav-logo {
@@ -92,7 +98,7 @@ a {
 }
 
 .hero-section {
-    background-image: url('../assets/hero-background.jpg');
+    background-image: url('../assets/siteImages/hero-background.jpg');
     background-size: cover;
     position: relative;
     height: 100vh;
@@ -162,7 +168,7 @@ a {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('../assets/parallax-background.jpg');
+    background-image: url('../assets/siteImages/parallax-background.jpg');
     background-attachment: fixed;
     background-size: cover;
 }

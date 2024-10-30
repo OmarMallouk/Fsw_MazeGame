@@ -1,11 +1,3 @@
-@font-face {
-    font-family: 'Press Start 2P';
-    src: url('fonts/BebasNeue-Regular.ttf') format('truetype');
-}
-
-body {
-    font-family: 'Press Start 2P', sans-serif;
-}
 
 .flex {
     display: flex;
@@ -62,4 +54,8 @@ body {
 .logo {
     height: 40px;
     width: 40px;
+}
+
+.justify-content {
+    justify-content: space-between;
 }
