@@ -30,7 +30,7 @@ function preloadLevel1(window) {
 		}
 	);
 	window.load.spritesheet(
-		"fireball",
+		"fireball-anim",
 		"assets/sprites/projectiles/fireball.png",
 		{
 			frameWidth: 64,

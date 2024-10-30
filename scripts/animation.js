@@ -143,7 +143,7 @@ function createanims(window) {
 	});
 	window.anims.create({
 		key: "fireball-anim",
-		frames: window.anims.generateFrameNumbers("fireball", {
+		frames: window.anims.generateFrameNumbers("fireball-anim", {
 			start: 0,
 			end: 4,
 		}),

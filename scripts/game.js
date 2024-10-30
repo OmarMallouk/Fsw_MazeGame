@@ -69,7 +69,7 @@ var config = {
 };
 
 var game = new Phaser.Game(config);
-console.log(this); 
+
 function playerMovement() {
 	player.setVelocity(0); // Reset both velocityX and velocityY
 

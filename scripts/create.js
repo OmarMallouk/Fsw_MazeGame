@@ -91,25 +91,7 @@ function createLevel1(window) {
 	);
 	window.time.addEvent({
 		delay: 1000, 
-		callback: shootleft, // The function to execute
-		callbackScope: window, // The scope in which to execute the function
-		loop: true, // Set to true to repeat the event
-	});
-	window.time.addEvent({
-		delay: 1000, 
-		callback: shootright, // The function to execute
-		callbackScope: window, // The scope in which to execute the function
-		loop: true, // Set to true to repeat the event
-	});
-	window.time.addEvent({
-		delay: 1000, 
-		callback: shootdown, // The function to execute
-		callbackScope: window, // The scope in which to execute the function
-		loop: true, // Set to true to repeat the event
-	});
-	window.time.addEvent({
-		delay: 1000, 
-		callback: shootup, // The function to execute
+		callback: shootfireballs, // The function to execute
 		callbackScope: window, // The scope in which to execute the function
 		loop: true, // Set to true to repeat the event
 	});
