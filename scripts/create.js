@@ -41,13 +41,15 @@ function physicsgroups(window) {
 	});
 }
 
-function coinset() {
-	coin = coins.get();
-	coin.setActive(true);
-	coin.setVisible(true);
-	coin.setPosition(200, 200);
-	coin.play("coin-anim");
-	coin.scale = 1.2;
+function coinset1() {
+	coinlocations1.forEach((location) => {
+		coin = coins.get();
+		coin.setActive(true);
+		coin.setVisible(true);
+		coin.setPosition(location[0], location[1]);
+		coin.play("coin-anim");
+		coin.scale = 1.2;
+	});
 }
 
 function createLevel1(window) {
@@ -57,7 +59,7 @@ function createLevel1(window) {
 	doors1(window);
 	physicsgroups(window);
 	//coin set function
-
+	coinset1();
 	player.setImmovable(true); //to make player unmovable by arrows
 
 	window.physics.add.collider(
@@ -67,7 +69,7 @@ function createLevel1(window) {
 			coin.setActive(false);
 			coin.setVisible(false);
 			coinscollected += 1;
-			if (coinscollected == 1) closeddoorimg.visible = false;
+			if (coinscollected == coinlocations1.length) closeddoorimg.visible = false;
 		},
 		null,
 		window
@@ -75,6 +77,16 @@ function createLevel1(window) {
 
 	window.physics.add.collider(
 		arrows,
+		WLayer,
+		function (arrow) {
+			arrow.setActive(false);
+			arrow.setVisible(false);
+		},
+		null,
+		window
+	);
+	window.physics.add.collider(
+		fireballs,
 		WLayer,
 		function (arrow) {
 			arrow.setActive(false);
