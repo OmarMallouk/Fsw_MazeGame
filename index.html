@@ -1,92 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/home.css">
-    <link rel="stylesheet" href="./styles/utilities.css">
-    <link rel="stylesheet" href="./styles/cards.css">
-    <link rel="stylesheet" href="./styles/colors.css">
-    <link rel="stylesheet" href="./styles/fonts.css">
-    <title>Document</title>
-</head>
-<body>
-<nav class="flex  navbar primary-color">
-    <div class="nav-logo">
-        <img src="assets/siteImages/labyrinth.png" alt="mazes">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles/home.css" />
+		<link rel="stylesheet" href="./styles/utilities.css" />
+		<link rel="stylesheet" href="./styles/cards.css" />
+		<link rel="stylesheet" href="./styles/colors.css" />
+		<link rel="stylesheet" href="./styles/fonts.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<nav class="flex navbar primary-color">
+			<div class="nav-logo">
+				<img src="assets/siteImages/labyrinth.png" alt="mazes" />
+			</div>
 
-    </div>
+			<h1 class="title">Catch Me</h1>
 
-    <h1 class="title">Catch Me</h1>
+			<div class="flex nav-links center">
+				<div class="flex center">
+					<a href="">Characters</a>
+				</div>
+				<div>
+					<a href="">Levels</a>
+				</div>
+				<div>
+					<a href="">Demo</a>
+				</div>
+			</div>
 
+			<div class="flex nav-actions">
+				<button class="b1">Start</button>
+			</div>
+		</nav>
 
-    <div class="flex nav-links center ">
-        <div class="flex center  ">
-            <a href="">Characters</a>
-        </div>
-        <div>
-            <a href="">Levels</a>
-        </div>
-        <div>
-            <a href="">Demo</a>
+		<section class="hero-section">
+			<p class="font-8vw text-stroke light-blue-txt">Realm of Heroes</p>
+		</section>
 
-        </div>
-    </div>
+		<section class="character-section">
+			<div class="heroName"><h1>Heroes</h1></div>
+			<div class="cards">
+				<div class="card">
+					<img
+						src="assets/siteImages/knight.png"
+						alt="Person"
+						class="card__image"
+					/>
+					<p class="card__name font-2vw names-font">Knight</p>
 
-    <div class="flex nav-actions">
-        <button class="b1">Start</button>
-    </div>
-</nav>
+					<button class="btn draw-border">Start</button>
+				</div>
+				<div class="card">
+					<img
+						src="assets/siteImages/wizard.png"
+						alt="Person"
+						class="card__image"
+					/>
+					<p class="card__name font-2vw names-font">Wizard</p>
+					<button class="btn draw-border">Start</button>
+				</div>
+				<div class="card">
+					<img
+						src="assets/siteImages/rogue.png"
+						alt="Person"
+						class="card__image"
+					/>
+					<p class="card__name font-2vw names-font">Rogue</p>
+					<button class="btn draw-border">Start</button>
+				</div>
+			</div>
+		</section>
 
-<section class="hero-section">
-    <p class="font-8vw text-stroke light-blue-txt">Realm of Heroes</p>
-</section>
+		<section class="demo">
+			<div class="demo-content">
+				<h1>JOIN OUR EPIC 2D ADVENTURE!</h1>
+				<iframe src="https://youtu.be/UUvsZeZx4-I?si=dIffIyRmGJ7RLWEF">
+				</iframe>
+			</div>
+		</section>
 
-<section class="character-section">
-    <div class="heroName"><h1>Heroes</h1></div>
-    <div class="cards">
-        <div class="card">
-            <img src="assets/siteImages/knight.png" alt="Person" class="card__image">
-            <p class="card__name font-2vw names-font">Knight</p>
+		<footer class="footer">
+			<div class="footer-content">
+				<img
+					src="assets/siteImages/labyrinth.png"
+					alt="logo"
+					class="logo"
+				/>
 
+				<div class="footer-links">
+					<a href="#">Support</a>
+					<a href="#">Terms</a>
+					<p class="copyright">© 2024 Game Heroes</p>
+				</div>
 
-            <button class="btn draw-border">Start</button>
-        </div>
-        <div class="card">
-            <img src="assets/siteImages/wizard.png" alt="Person" class="card__image">
-            <p class="card__name font-2vw names-font">Wizard</p>
-            <button class="btn draw-border">Start</button>
-        </div>
-        <div class="card">
-            <img src="assets/siteImages/rogue.png" alt="Person" class="card__image">
-            <p class="card__name font-2vw names-font">Rogue</p>
-            <button class="btn draw-border">Start</button>
-        </div>
-    </div>
-</section>
-
-<section class="demo">
-    <div class="demo-content">
-        <h1>JOIN OUR EPIC 2D ADVENTURE!</h1>
-        <iframe
-                src="https://youtu.be/UUvsZeZx4-I?si=dIffIyRmGJ7RLWEF">
-        </iframe>
-    </div>
-</section>
-
-<footer class="footer">
-    <div class="footer-content">
-        <img src="assets/siteImages/labyrinth.png" alt="logo" class="logo">
-
-        <div class="footer-links">
-            <a href="#">Support</a>
-            <a href="#">Terms</a>
-            <p class="copyright">© 2024 Game Heroes</p>
-        </div>
-
-        <button class="contact-button">Contact Us</button>
-    </div>
-</footer>
-
-</body>
+				<button class="contact-button">Contact Us</button>
+			</div>
+		</footer>
+	</body>
 </html>
