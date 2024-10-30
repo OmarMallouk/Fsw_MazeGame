@@ -88,6 +88,18 @@ var coinlocations2 = [
     [487, 95], [522, 102], [395, 401], [553, 71], [203, 158], [465, 230]
 ];
 
+var shootleftlocations2 = [
+    [630, 350],
+];
+var shootrightlocations2 = [[531, 118],];
+var shootuplocations2 = [
+    [190, 400], [340, 400], [285, 299],
+
+];
+var shootdownlocations2 = [
+    [213, 50], [400, 50], [100, 50], [415, 140],
+];
+
 var shootleftlocations3 = [
     [610, 100],
     [610, 215],
