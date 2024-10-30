@@ -4,7 +4,7 @@ var mapselect = "map1";
 var player;
 
 var arrows;
-var fireballs;
+var fireballs;// physics groups
 var coins;
 
 var closeddoorimg;

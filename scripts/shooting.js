@@ -3,11 +3,11 @@ function shootup(x, y) {
 	shootuplocations.forEach((location) => {
 		arrow = arrows.get();
 		if (arrow) {
-			arrow.setAngle(-90);//image angle
-			arrow.setActive(true);//activate object
-			arrow.setVisible(true);//make visible
-			arrow.setPosition(location[0], location[1]);//position
-			arrow.setVelocityX(-250);//velocity
+			arrow.setAngle(-90); //image angle
+			arrow.setActive(true); //activate object
+			arrow.setVisible(true); //make visible
+			arrow.setPosition(location[0], location[1]); //position
+			arrow.setVelocityX(-250); //velocity
 		}
 	});
 }
