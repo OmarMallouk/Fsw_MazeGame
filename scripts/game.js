@@ -22,11 +22,11 @@ class Level2Scene extends Phaser.Scene {
     }
 
     preload() {
-        preloadLevel2(this);
+        preloadLevel1(this);
     }
 
     create() {
-        createLevel2(this);
+        createLevel1(this);
     }
 
     update() {
@@ -64,7 +64,7 @@ var config = {
             debug: false, // Set to true if you want to see debug graphics
         },
     },
-    scene: [Level2Scene, Level1Scene, Level3Scene],
+    scene: [Level1Scene, Level2Scene, Level3Scene],
     parent: "Level1frame",
 };
 

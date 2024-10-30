@@ -190,10 +190,10 @@ function shootfireballs1() {
 }
 
 function shootarrows1() {
-    shootdown2();
-    shootup2();
-    shootleft2();
-    shootright2();
+    shootdown1();
+    shootup1();
+    shootleft1();
+    shootright1();
 }
 
 // function shootarrows2() {
