@@ -124,6 +124,15 @@ function wizzardanimation() {
 
 function createanims() {
 	Level1.anims.create({
+		key: "coin-anim",
+		frames: Level1.anims.generateFrameNumbers("coin-sheet", {
+			start: 0,
+			end: 3,
+		}),
+		frameRate: 10,
+		repeat: -1, // Loop indefinitely
+	});
+	Level1.anims.create({
 		key: "knight-idle-anim",
 		frames: Level1.anims.generateFrameNumbers("knight-idle-sheet", {
 			start: 0,

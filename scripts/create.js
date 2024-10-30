@@ -9,27 +9,51 @@ function createLevel1() {
 	WLayer = map.createLayer("Walls", tileset, 0, 0);
 	WLayer.setCollisionByProperty({ collided: true });
 	WLayer.setScale(1.4);
-	
+
 	player = this.physics.add.sprite(200, 300, "rouge-idle-sheet");
 	player.anims.play("rogue-idle-anim");
 	player.body.setCollideWorldBounds(true);
 	this.physics.add.collider(player, WLayer);
-	
-	opendooorimg = this.add.image(67,110,'opendoor');
-	opendooorimg.setScale(1.4)
-	closeddoorimg = this.add.image(67, 110, 'closeddoor');
-	closeddoorimg.setScale(1.4)
+
+	opendooorimg = this.add.image(67, 110, "opendoor");
+	opendooorimg.setScale(1.4);
+	closeddoorimg = this.add.image(67, 110, "closeddoor");
+	closeddoorimg.setScale(1.4);
 	arrows = this.physics.add.group({
 		defaultKey: "arrows",
 		maxSize: -1,
 	});
-	
+
 	fireballs = this.physics.add.group({
 		defaultKey: "fireball-anim",
 		maxSize: -1,
 	});
 
+	coins = this.physics.add.group({
+		defaultKey: "coin-sheet",
+		maxSize: 10,
+	});
+
+	coin = coins.get();
+	coin.setActive(true);
+	coin.setVisible(true);
+	coin.setPosition(200, 200);
+	coin.play("coin-anim");
+	coin.scale = 1.2;
 	player.setImmovable(true);
+	this.physics.add.collider(
+		coins,
+		player,
+		function (player, coin) {
+			coin.setActive(false);
+			coin.setVisible(false);
+			coinscollected += 1
+			if (coinscollected == 1)
+				closeddoorimg.visible = false
+		},
+		null,
+		this
+	);
 	this.physics.add.collider(
 		arrows,
 		WLayer,

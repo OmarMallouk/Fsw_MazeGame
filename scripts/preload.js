@@ -22,6 +22,14 @@ function preloadLevel1() {
 		}
 	);
 	this.load.spritesheet(
+		"coin-sheet",
+		"assets/sprites/Environment/coinsprite.png",
+		{
+			frameWidth: 8,
+			frameHeight: 8,
+		}
+	);
+	this.load.spritesheet(
 		"fireball",
 		"assets/sprites/projectiles/fireball.png",
 		{
