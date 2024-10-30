@@ -1,5 +1,5 @@
 function rogueanimation() {
-	var state = "idle";
+	state = "idle";
 	if (state === "idle") {
 		player.body.setOffset(0, 0);
 
@@ -42,7 +42,7 @@ function rogueanimation() {
 }
 
 function knightanimation() {
-	var state = "idle";
+	state = "idle";
 	if (state === "idle") {
 		if (
 			cursors.left.isDown ||
@@ -81,7 +81,7 @@ function knightanimation() {
 }
 
 function wizzardanimation() {
-	var state = "idle";
+	state = "idle";
 	if (state === "idle") {
 		player.body.setOffset(0, 0);
 		if (

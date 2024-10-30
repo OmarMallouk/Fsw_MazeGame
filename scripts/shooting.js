@@ -26,7 +26,8 @@ function shootdown1() {
 }
 function shootleft1() {
 	var arrow;
-	shootleftlocations1.forEach((location) => {
+	shootleftlocations1.forEach((location) => 
+
 		arrow = arrows.get();
 		if (arrow) {
 			arrow.setAngle(-90);
@@ -40,7 +41,8 @@ function shootleft1() {
 function shootright1() {
 	var arrow;
 	shootrightlocations1.forEach((location) => {
-		arrow = arrows.get();
+		arrow = arrows.get()
+
 		if (arrow) {
 			arrow.setAngle(-90);
 			arrow.setActive(true);
@@ -52,8 +54,10 @@ function shootright1() {
 }
 function shootupFireball1() {
 	var fireball;
-	shootuplocations1.forEach((location) => {
+	shootfireballuplocations1.forEach((location) => {
 		fireball = fireballs.get();
+		
+
 		if (fireball) {
 			fireball.setAngle(-90);
 			fireball.setActive(true);
@@ -65,11 +69,12 @@ function shootupFireball1() {
 }
 function shootdownFireball1() {
 	var fireball;
-	shootdownlocations1.forEach((location) => {
+	shootfireballdownlocations1.forEach((location) => {
 		fireball = fireballs.get();
+		
 		if (fireball) {
 			fireball.setAngle(90);
-			fireball.play("fireball-anim")
+			fireball.play("fireball-anim");
 			fireball.setActive(true);
 			fireball.setVisible(true);
 			fireball.setPosition(location[0], location[1]);
@@ -79,11 +84,12 @@ function shootdownFireball1() {
 }
 function shootleftFireball1() {
 	var fireball;
-	shootleftlocations1.forEach((location) => {
+	shootfireballleftlocations1.forEach((location) => {
 		fireball = fireballs.get();
+		
 		if (fireball) {
 			fireball.setAngle(180);
-			fireball.play("fireball-anim")
+			fireball.play("fireball-anim");
 			fireball.setActive(true);
 			fireball.setVisible(true);
 			fireball.setPosition(location[0], location[1]);
@@ -93,8 +99,9 @@ function shootleftFireball1() {
 }
 function shootrightFireball1() {
 	var fireball;
-	shootrightlocations1.forEach((location) => {
+	shootfireballrightlocations1.forEach((location) => {
 		fireball = fireballs.get();
+		
 		if (fireball) {
 			fireball.setAngle(-90);
 			fireball.setActive(true);
@@ -104,17 +111,15 @@ function shootrightFireball1() {
 		}
 	});
 }
-function shootfireballs1()
-{
-	shootdownFireball1()
-	shootupFireball1()
-	shootleftFireball1()
-	shootrightFireball1()
+function shootfireballs1() {
+	shootdownFireball1();
+	shootupFireball1();
+	shootleftFireball1();
+	shootrightFireball1();
 }
-function shootarrows1()
-{
-	shootdown1()
-	shootup1()
-	shootleft1()
-	shootright1()
+function shootarrows1() {
+	shootdown1();
+	shootup1();
+	shootleft1();
+	shootright1();
 }

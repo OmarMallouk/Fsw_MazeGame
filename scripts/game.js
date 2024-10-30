@@ -2,17 +2,14 @@ class Level1Scene extends Phaser.Scene {
 	constructor() {
 		super({ key: "Level1" });
 	}
-	preload()
-	{
-		preloadLevel1(this)
+	preload() {
+		preloadLevel1(this);
 	}
-	create()
-	{
-		createLevel1(this)
+	create() {
+		createLevel1(this);
 	}
-	update()
-	{
-		updateLevel1(this)
+	update() {
+		updateLevel1(this);
 	}
 }
 
@@ -20,17 +17,14 @@ class Level2Scene extends Phaser.Scene {
 	constructor() {
 		super({ key: "Level2" });
 	}
-	preload()
-	{
-		preloadLevel2(this)
+	preload() {
+		preloadLevel2(this);
 	}
-	create()
-	{
-		createLevel2(this)
+	create() {
+		createLevel2(this);
 	}
-	update()
-	{
-		updateLevel2(this)
+	update() {
+		updateLevel2(this);
 	}
 }
 
@@ -38,20 +32,16 @@ class Level3Scene extends Phaser.Scene {
 	constructor() {
 		super({ key: "Level3" });
 	}
-	preload()
-	{
-		preloadLevel1(this)
+	preload() {
+		preloadLevel1(this);
 	}
-	create()
-	{
-		createLevel1(this)
+	create() {
+		createLevel1(this);
 	}
-	update()
-	{
-		updateLevel1(this)
+	update() {
+		updateLevel1(this);
 	}
 }
-
 
 var config = {
 	type: Phaser.AUTO,
@@ -64,7 +54,7 @@ var config = {
 			debug: false, // Set to true if you want to see debug graphics
 		},
 	},
-	scene:[Level1Scene,Level2Scene,Level3Scene],
+	scene: [Level1Scene, Level2Scene, Level3Scene],
 	parent: "Level1frame",
 };
 
@@ -93,16 +83,32 @@ function updateLevel1(window) {
 	if (charselect === "knight") knightanimation();
 	if (charselect === "rogue") rogueanimation();
 	playerMovement();
-	if (hp <= 0)
-	{
-		alert("you lose")
-		hp = 5
-		window.location.reload();
+	console.log(hp);
+	if (hp <= 0) {
+		window.physics.pause();
+		window.tweens.pauseAll();
+		window.time.paused = true;
+		window.anims.pauseAll();
+		setTimeout(() => {
+			window.physics.resume();
+			window.tweens.resumeAll();
+			window.time.paused = false;
+			window.anims.resumeAll();
+			window.scene.stop();
+			window.scene.start();
+		}, 2000);
+		hp = 5;
 	}
-	console.log ("x: "+ player.x +" y:" + player.y)
-	if (player.x > 60 && player.x < 80 && player.y > 125 && player.y < 130 && coinscollected == 1){
-		alert("you win")
+	console.log("x: " + player.x + " y:" + player.y);
+	if (
+		player.x > 60 &&
+		player.x < 80 &&
+		player.y > 125 &&
+		player.y < 130 &&
+		coinscollected == 1
+	) {
+		alert("you win");
 		window.location.reload();
-		coinscollected = 0
+		coinscollected = 0;
 	}
 }

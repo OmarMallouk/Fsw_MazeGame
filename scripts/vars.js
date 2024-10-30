@@ -1,4 +1,4 @@
-var charselect = "rogue";
+var charselect = "wizzard";
 var mapselect = "map1";
 
 var player;
@@ -12,6 +12,7 @@ var closeddoorimg;
 var hp = 5;
 var coinscollected = 0;
 var totalhp = 2;
+var state = "idle"
 
 var shootleftlocations1 = [
 	[610, 100],
@@ -25,6 +26,20 @@ var shootdownlocations1 = [
 	[325, 50],
 	[505, 50],
 ];
+
+var shootfireballleftlocations1 = [
+	[610, 100],
+	[610, 215],
+	[610, 345],
+];
+var shootfireballrightlocations1 = [];
+var shootfireballuplocations1 = [];
+var shootfireballdownlocations1 = [
+	[145, 50],
+	[325, 50],
+	[505, 50],
+];
+
 var coinlocations1 = [[200, 200]];
 
 var shootleftlocations2 = [

@@ -52,16 +52,8 @@ function coinset1() {
 	});
 }
 
-function createLevel1(window) {
-	createanims(window); //create animations
-	setlayers1(window);
-	playersetup1(window);
-	doors1(window);
-	physicsgroups(window);
-	//coin set function
-	coinset1();
-	player.setImmovable(true); //to make player unmovable by arrows
-
+function physicscolliders(window) {
+	player.setImmovable(true); // make player immovable by projectiles
 	window.physics.add.collider(
 		coins,
 		player,
@@ -69,12 +61,12 @@ function createLevel1(window) {
 			coin.setActive(false);
 			coin.setVisible(false);
 			coinscollected += 1;
-			if (coinscollected == coinlocations1.length) closeddoorimg.visible = false;
+			if (coinscollected == coinlocations1.length)
+				closeddoorimg.visible = false;
 		},
 		null,
 		window
 	);
-
 	window.physics.add.collider(
 		arrows,
 		WLayer,
@@ -101,7 +93,7 @@ function createLevel1(window) {
 		function (player, arrow) {
 			arrow.setActive(false);
 			arrow.setVisible(false);
-			// hp--;
+			hp--;
 		},
 		null,
 		window
@@ -112,15 +104,26 @@ function createLevel1(window) {
 		function (player, fireball) {
 			fireball.setActive(false);
 			fireball.setVisible(false);
-			hp -= 2;
+			if (charselect != "wizzard")
+				hp -= 2;
 		},
 		null,
 		window
 	);
 	window.time.addEvent({
 		delay: 1000,
-		callback: shootfireballs1, // The function to execute
+		callback: shootarrows1, // The function to execute
 		callbackScope: window, // The scope in which to execute the function
 		loop: true, // Set to true to repeat the event
 	});
+}
+
+function createLevel1(window) {
+	createanims(window); //create animations
+	setlayers1(window);
+	playersetup1(window);
+	doors1(window);
+	physicsgroups(window);
+	coinset1();
+	physicscolliders(window);
 }
