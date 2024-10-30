@@ -4,11 +4,11 @@ function shootup1() {
 		arrow = arrows.get();
 		if (arrow) {
 
-			arrow.setAngle(-90); //image angle
+			arrow.setAngle(0); //image angle
 			arrow.setActive(true); //activate object
 			arrow.setVisible(true); //make visible
 			arrow.setPosition(location[0], location[1]); //position
-			arrow.setVelocityX(-250); //velocity
+			arrow.setVelocityY(-250); //velocity
 		}
 	});
 }
@@ -46,11 +46,11 @@ function shootright1() {
 		arrow = arrows.get();
 
 		if (arrow) {
-			arrow.setAngle(-90);
+			arrow.setAngle(90);
 			arrow.setActive(true);
 			arrow.setVisible(true);
 			arrow.setPosition(location[0], location[1]);
-			arrow.setVelocityY(250);
+			arrow.setVelocityX(250);
 		}
 	});
 }

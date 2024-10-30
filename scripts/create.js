@@ -10,7 +10,7 @@ function setlayers1(window) {
 }
 
 function playersetup1(window) {
-	player = window.physics.add.sprite(200, 300, "rouge-idle-sheet");
+	player = window.physics.add.sprite(159, 268, "rouge-idle-sheet");
 	player.anims.play("rogue-idle-anim");
 	player.body.setCollideWorldBounds(true);
 	window.physics.add.collider(player, WLayer);
@@ -37,7 +37,7 @@ function physicsgroups(window) {
 
 	coins = window.physics.add.group({
 		defaultKey: "coin-sheet",
-		maxSize: 10,
+		maxSize: -1,
 	});
 }
 
@@ -60,6 +60,7 @@ function physicscolliders(window) {
 		function (player, coin) {
 			coin.setActive(false);
 			coin.setVisible(false);
+			coin.disableBody(true, true);
 			coinscollected += 1;
 			if (coinscollected == coinlocations1.length)
 				closeddoorimg.visible = false;

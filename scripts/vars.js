@@ -9,22 +9,32 @@ var coins;
 
 var closeddoorimg;
 
-var hp = 5;
+var hp = 99999;
 var coinscollected = 0;
 var totalhp = 2;
-var state = "idle"
+var state = "idle";
 
 var shootleftlocations1 = [
-	[610, 100],
-	[610, 215],
-	[610, 345],
+	[500, 235],
+	[610, 300],
+	[610, 145],
 ];
-var shootrightlocations1 = [];
-var shootuplocations1 = [];
+var shootrightlocations1 = [
+	[213, 235],
+	[40, 300],
+];
+var shootuplocations1 = [
+	[190, 400],
+	[303, 400],
+	[415, 400],
+	[527, 400],
+];
 var shootdownlocations1 = [
-	[145, 50],
+	[213, 50],
 	[325, 50],
-	[505, 50],
+	[437, 50],
+	[370, 150],
+	[305, 150],
 ];
 
 var shootfireballleftlocations1 = [
@@ -40,7 +50,24 @@ var shootfireballdownlocations1 = [
 	[505, 50],
 ];
 
-var coinlocations1 = [[200, 200]];
+var coinlocations1 = [
+	[100, 200],
+	[200, 200],
+	[300, 200],
+	[470, 100],
+	[170, 100],
+	[270, 100],
+	[370, 100],
+	[400, 200],
+	[500, 200],
+	[600, 200],
+	[130, 350],
+	[230, 350],
+	[330, 350],
+	[430, 350],
+	[580, 350],
+	[600, 350],
+];
 
 var shootleftlocations2 = [
 	[610, 100],

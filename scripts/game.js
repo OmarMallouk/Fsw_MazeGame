@@ -25,7 +25,7 @@ class Level2Scene extends Phaser.Scene {
 	}
 	update() {
 		updateLevel1(this);
-		console.log("level2")
+		console.log("level2");
 	}
 }
 
@@ -85,6 +85,8 @@ function updateLevel1(window) {
 	if (charselect === "rogue") rogueanimation();
 	playerMovement();
 	console.log(hp);
+	console.log(coinscollected);
+	console.log(coinlocations1.length);
 	if (hp <= 0) {
 		window.physics.pause();
 		window.tweens.pauseAll();
