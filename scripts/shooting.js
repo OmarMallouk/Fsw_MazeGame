@@ -54,6 +54,65 @@ function shootright1() {
 		}
 	});
 }
+
+//3rd level shooting 
+
+function shootup3() {
+	var arrow;
+	shootuplocations3.forEach((location) => {
+		arrow = arrows.get();
+		if (arrow) {
+
+			arrow.setAngle(0); //image angle
+			arrow.setActive(true); //activate object
+			arrow.setVisible(true); //make visible
+			arrow.setPosition(location[0], location[1]); //position
+			arrow.setVelocityY(-250); //velocity
+		}
+	});
+}
+function shootdown3() {
+	var arrow;
+	shootdownlocations3.forEach((location) => {
+		arrow = arrows.get();
+		if (arrow) {
+
+			arrow.setAngle(180);
+			arrow.setActive(true);
+			arrow.setVisible(true);
+			arrow.setPosition(location[0], location[1]);
+			arrow.setVelocityY(250);
+		}
+	});
+}
+function shootleft3() {
+	var arrow;
+	shootleftlocations3.forEach((location) => {
+
+		arrow = arrows.get();
+		if (arrow) {
+			arrow.setAngle(-90);
+			arrow.setActive(true);
+			arrow.setVisible(true);
+			arrow.setPosition(location[0], location[1]);
+			arrow.setVelocityX(-250);
+		}
+	});
+}
+function shootright3() {
+	var arrow;
+	shootrightlocations3.forEach((location) => {
+		arrow = arrows.get();
+
+		if (arrow) {
+			arrow.setAngle(90);
+			arrow.setActive(true);
+			arrow.setVisible(true);
+			arrow.setPosition(location[0], location[1]);
+			arrow.setVelocityX(250);
+		}
+	});
+}
 function shootupFireball1() {
 	var fireball;
 	shootfireballuplocations1.forEach((location) => {
@@ -119,9 +178,28 @@ function shootfireballs1() {
 	shootleftFireball1();
 	shootrightFireball1();
 }
+
 function shootarrows1() {
 	shootdown1();
 	shootup1();
 	shootleft1();
 	shootright1();
 }
+
+
+
+// function shootarrows2() {
+// 	shootdown2();
+// 	shootup2();
+// 	shootleft2();
+// 	shootright2();
+// }
+
+
+
+// function shootarrows3() {
+// 	shootdown3();
+// 	shootup3();
+// 	shootleft3();
+// 	shootright3();
+// }
