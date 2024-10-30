@@ -100,4 +100,35 @@ var shootdownlocations3 = [
     [325, 50],
     [505, 50],
 ];
-var coinlocations3 = [[200, 200]];
+var coinlocations3 = [[200, 200],
+[128, 330],
+[55, 410],
+[39, 172],
+[255, 396],[39, 172],[247, 58],[420, 70],[598, 67],[504, 340],[340, 160],];
+
+
+
+var shootleftlocations3 = [
+	[635, 264],
+	[40, 280],
+	
+	
+];
+var shootrightlocations3 = [
+	[40, 280],
+	[40,87],
+];
+
+
+var shootuplocations3 = [
+	[190, 400],
+	[395, 410],
+	[537, 410],
+	[385, 93],
+	
+];
+var shootdownlocations3 = [
+	[213, 50],
+
+	
+];
