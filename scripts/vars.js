@@ -95,4 +95,8 @@ var shootdownlocations3 = [
 	[325, 50],
 	[505, 50],
 ];
-var coinlocations3 = [[200, 200]];
+var coinlocations3 = [[200, 200],
+[128, 330],
+[55, 410],
+[39, 172],
+[200, 200]];
