@@ -3,6 +3,7 @@ function shootup1() {
 	shootuplocations1.forEach((location) => {
 		arrow = arrows.get();
 		if (arrow) {
+
 			arrow.setAngle(-90); //image angle
 			arrow.setActive(true); //activate object
 			arrow.setVisible(true); //make visible
@@ -16,6 +17,7 @@ function shootdown1() {
 	shootdownlocations1.forEach((location) => {
 		arrow = arrows.get();
 		if (arrow) {
+
 			arrow.setAngle(180);
 			arrow.setActive(true);
 			arrow.setVisible(true);
@@ -26,7 +28,7 @@ function shootdown1() {
 }
 function shootleft1() {
 	var arrow;
-	shootleftlocations1.forEach((location) => 
+	shootleftlocations1.forEach((location) => {
 
 		arrow = arrows.get();
 		if (arrow) {
@@ -41,7 +43,7 @@ function shootleft1() {
 function shootright1() {
 	var arrow;
 	shootrightlocations1.forEach((location) => {
-		arrow = arrows.get()
+		arrow = arrows.get();
 
 		if (arrow) {
 			arrow.setAngle(-90);

@@ -18,13 +18,14 @@ class Level2Scene extends Phaser.Scene {
 		super({ key: "Level2" });
 	}
 	preload() {
-		preloadLevel2(this);
+		preloadLevel1(this);
 	}
 	create() {
-		createLevel2(this);
+		createLevel1(this);
 	}
 	update() {
-		updateLevel2(this);
+		updateLevel1(this);
+		console.log("level2")
 	}
 }
 
@@ -98,6 +99,7 @@ function updateLevel1(window) {
 			window.scene.start();
 		}, 2000);
 		hp = 5;
+		coinscollected = 0;
 	}
 	console.log("x: " + player.x + " y:" + player.y);
 	if (
@@ -105,10 +107,21 @@ function updateLevel1(window) {
 		player.x < 80 &&
 		player.y > 125 &&
 		player.y < 130 &&
-		coinscollected == 1
+		coinscollected == coinlocations1.length
 	) {
-		alert("you win");
-		window.location.reload();
+		window.physics.pause();
+		window.tweens.pauseAll();
+		window.time.paused = true;
+		window.anims.pauseAll();
+		setTimeout(() => {
+			window.physics.resume();
+			window.tweens.resumeAll();
+			window.time.paused = false;
+			window.anims.resumeAll();
+			window.scene.stop();
+			window.scene.start("Level2");
+		}, 2000);
+		hp = 5;
 		coinscollected = 0;
 	}
 }
