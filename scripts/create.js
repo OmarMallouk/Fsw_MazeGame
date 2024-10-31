@@ -111,7 +111,7 @@ function physicscolliders1(window) {
 		window
 	);
 }
-function physicscolliders1(window) {
+function physicscolliders2(window) {
 	player.setImmovable(true); // make player immovable by projectiles
 	window.physics.add.collider(
 		coins,
@@ -121,7 +121,7 @@ function physicscolliders1(window) {
 			coin.setVisible(false);
 			coin.disableBody(true, true);
 			coinscollected += 1;
-			if (coinscollected == coinlocations1.length)
+			if (coinscollected == coinlocations2.length)
 				closeddoorimg.visible = false;
 		},
 		null,

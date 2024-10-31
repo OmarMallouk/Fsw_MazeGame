@@ -1,6 +1,6 @@
-function shootup1() {
+function shootup2() {
     var arrow;
-    shootuplocations1.forEach((location) => {
+    shootuplocations2.forEach((location) => {
         arrow = arrows.get();
         if (arrow) {
 
@@ -13,9 +13,9 @@ function shootup1() {
     });
 }
 
-function shootdown1() {
+function shootdown2() {
     var arrow;
-    shootdownlocations1.forEach((location) => {
+    shootdownlocations2.forEach((location) => {
         arrow = arrows.get();
         if (arrow) {
 
@@ -28,9 +28,9 @@ function shootdown1() {
     });
 }
 
-function shootleft1() {
+function shootleft2() {
     var arrow;
-    shootleftlocations1.forEach((location) => {
+    shootleftlocations2.forEach((location) => {
 
         arrow = arrows.get();
         if (arrow) {
@@ -43,9 +43,9 @@ function shootleft1() {
     });
 }
 
-function shootright1() {
+function shootright2() {
     var arrow;
-    shootrightlocations1.forEach((location) => {
+    shootrightlocations2.forEach((location) => {
         arrow = arrows.get();
 
         if (arrow) {
@@ -58,79 +58,79 @@ function shootright1() {
     });
 }
 
-function shootupFireball1() {
-    var fireball;
-    shootfireballuplocations1.forEach((location) => {
-        fireball = fireballs.get();
+// function shootupFireball1() {
+//     var fireball;
+//     shootfireballuplocations1.forEach((location) => {
+//         fireball = fireballs.get();
 
 
-        if (fireball) {
-            fireball.setAngle(-90);
-            fireball.setActive(true);
-            fireball.setVisible(true);
-            fireball.setPosition(location[0], location[1]);
-            fireball.setVelocityX(-250);
-        }
-    });
-}
+//         if (fireball) {
+//             fireball.setAngle(-90);
+//             fireball.setActive(true);
+//             fireball.setVisible(true);
+//             fireball.setPosition(location[0], location[1]);
+//             fireball.setVelocityX(-250);
+//         }
+//     });
+// }
 
-function shootdownFireball1() {
-    var fireball;
-    shootfireballdownlocations1.forEach((location) => {
-        fireball = fireballs.get();
+// function shootdownFireball1() {
+//     var fireball;
+//     shootfireballdownlocations1.forEach((location) => {
+//         fireball = fireballs.get();
 
-        if (fireball) {
-            fireball.setAngle(90);
-            fireball.play("fireball-anim");
-            fireball.setActive(true);
-            fireball.setVisible(true);
-            fireball.setPosition(location[0], location[1]);
-            fireball.setVelocityY(250);
-        }
-    });
-}
+//         if (fireball) {
+//             fireball.setAngle(90);
+//             fireball.play("fireball-anim");
+//             fireball.setActive(true);
+//             fireball.setVisible(true);
+//             fireball.setPosition(location[0], location[1]);
+//             fireball.setVelocityY(250);
+//         }
+//     });
+// }
 
-function shootleftFireball1() {
-    var fireball;
-    shootfireballleftlocations1.forEach((location) => {
-        fireball = fireballs.get();
+// function shootleftFireball1() {
+//     var fireball;
+//     shootfireballleftlocations1.forEach((location) => {
+//         fireball = fireballs.get();
 
-        if (fireball) {
-            fireball.setAngle(180);
-            fireball.play("fireball-anim");
-            fireball.setActive(true);
-            fireball.setVisible(true);
-            fireball.setPosition(location[0], location[1]);
-            fireball.setVelocityX(-250);
-        }
-    });
-}
+//         if (fireball) {
+//             fireball.setAngle(180);
+//             fireball.play("fireball-anim");
+//             fireball.setActive(true);
+//             fireball.setVisible(true);
+//             fireball.setPosition(location[0], location[1]);
+//             fireball.setVelocityX(-250);
+//         }
+//     });
+// }
 
-function shootrightFireball1() {
-    var fireball;
-    shootfireballrightlocations1.forEach((location) => {
-        fireball = fireballs.get();
+// function shootrightFireball1() {
+//     var fireball;
+//     shootfireballrightlocations1.forEach((location) => {
+//         fireball = fireballs.get();
 
-        if (fireball) {
-            fireball.setAngle(-90);
-            fireball.setActive(true);
-            fireball.setVisible(true);
-            fireball.setPosition(location[0], location[1]);
-            fireball.setVelocityY(250);
-        }
-    });
-}
+//         if (fireball) {
+//             fireball.setAngle(-90);
+//             fireball.setActive(true);
+//             fireball.setVisible(true);
+//             fireball.setPosition(location[0], location[1]);
+//             fireball.setVelocityY(250);
+//         }
+//     });
+// }
 
-function shootfireballs1() {
-    shootdownFireball1();
-    shootupFireball1();
-    shootleftFireball1();
-    shootrightFireball1();
-}
+// function shootfireballs1() {
+//     shootdownFireball1();
+//     shootupFireball1();
+//     shootleftFireball1();
+//     shootrightFireball1();
+// }
 
-function shootarrows1() {
-    shootdown1();
-    shootup1();
-    shootleft1();
-    shootright1();
+function shootarrows2() {
+    shootdown2();
+    shootup2();
+    shootleft2();
+    shootright2();
 }

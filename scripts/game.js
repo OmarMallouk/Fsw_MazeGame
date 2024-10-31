@@ -22,16 +22,16 @@ class Level2Scene extends Phaser.Scene {
 	}
 
 	preload() {
-		// preloadLevel1(this);
+		preloadLevel2(this);
 	}
 
 	create() {
-		createLevel1(this);
+		createLevel2(this);
 	}
 
 	update() {
-		updateLevel1(this);
-		console.log("level2");
+		updateLevel2(this);
+		console.log("level3");
 	}
 }
 
@@ -64,7 +64,7 @@ var config = {
 			debug: false, // Set to true if you want to see debug graphics
 		},
 	},
-	scene: [Level3Scene, Level2Scene, Level1Scene],
+	scene: [Level1Scene, Level2Scene, Level3Scene],
 	parent: "Level1frame",
 };
 
@@ -130,21 +130,21 @@ function updateLevel1(window) {
 			window.time.paused = false;
 			window.anims.resumeAll();
 			window.scene.stop();
-			window.scene.start("Level3");
+			window.scene.start("Level2");
 		}, 2000);
 		hp = 99999;
 		coinscollected = 0;
 	}
 }
 
-function updateLevel1(window) {
+function updateLevel2(window) {
 	if (charselect === "wizzard") wizzardanimation();
 	if (charselect === "knight") knightanimation();
 	if (charselect === "rogue") rogueanimation();
 	playerMovement();
 	console.log(hp);
 	console.log(coinscollected);
-	console.log(coinlocations1.length);
+	console.log(coinlocations2.length);
 	if (hp <= 0) {
 		window.physics.pause();
 		window.tweens.pauseAll();
@@ -164,10 +164,10 @@ function updateLevel1(window) {
 	console.log("x: " + player.x + " y:" + player.y);
 	if (
 		player.x > 60 &&
-		player.x < 80 &&
-		player.y > 125 &&
-		player.y < 130 &&
-		coinscollected == coinlocations1.length
+		player.x < 700 &&
+		player.y > 15 &&
+		player.y < 30 &&
+		coinscollected == coinlocations2.length
 	) {
 		window.physics.pause();
 		window.tweens.pauseAll();
@@ -228,7 +228,7 @@ function updateLevel3(window) {
 			window.time.paused = false;
 			window.anims.resumeAll();
 			window.scene.stop();
-			window.scene.start("Level3");
+			window.scene.start("Level1");
 		}, 2000);
 		hp = 99999;
 		coinscollected = 0;
