@@ -1,16 +1,36 @@
-body
+*
 {
-	background-color: black;
+    margin: 0;
+    padding: 0;
+    border: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #0c1c2c;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
 
-#gameframe
-{
+#gameframe {
 	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
+.selectdiv {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.selectdiv > button {
+
+	padding: 15px;
+	border-radius: 15px;
+	background-color: #456196;
+}
