@@ -53,8 +53,11 @@ a {
 	width: 120px;
 }
 
-.logoSvg{
-	background-color: #a5bbcf;
+.newLogo{
+	border-radius: 20px;
+	border-color: rgb(47, 80, 112);
+	border-style: double;
+	margin-top: 20px;
 }
 
 .nav-search {
