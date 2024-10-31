@@ -114,14 +114,14 @@ function setlayers2(window) {
 }
 
 function playersetup2(window) {
-	player = window.physics.add.sprite(159, 268, "rouge-idle-sheet");
+	player = window.physics.add.sprite(55, 383, "rouge-idle-sheet");
 	player.anims.play("rogue-idle-anim");
 	player.body.setCollideWorldBounds(true);
 	window.physics.add.collider(player, WLayer);
 }
 
 function doors2(window) {
-	opendooorimg = window.add.image(0, 199, "opendoor");
+	opendooorimg = window.add.image(610, 20, "opendoor");
 	opendooorimg.setScale(1.4);
 	closeddoorimg = window.add.image(610, 20, "closeddoor");
 	closeddoorimg.setScale(1.4);
