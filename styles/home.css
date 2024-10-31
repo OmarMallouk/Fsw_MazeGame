@@ -202,8 +202,17 @@ a {
 }
 
 iframe {
-	width: 600px;
-	height: 400px;
+	width: 800px;
+	height: 600px;
+	border-radius: 5px;
+}
+
+
+.logo1{
+	width: 100px;
+	border-radius: 20px;
+	border-color: rgb(47, 80, 112);
+	border-style: double;
 }
 
 @media (max-width: 700px) {
