@@ -1,6 +1,6 @@
 function preloadLevel3(window) {
 	window.load.image('arrows', 'assets/sprites/projectiles/arrow.png'); 
-	window.load.tilemapTiledJSON("map", "assets/tilemaps/level3.json");
+	window.load.tilemapTiledJSON("map3", "assets/tilemaps/level3.json");
 	window.load.image(
 		"tiles",
 		"assets/sprites/Environment/dungeon.png"
@@ -113,11 +113,11 @@ function preloadLevel3(window) {
 
 function setlayers3(window) {
 	cursors = window.input.keyboard.createCursorKeys(); // setup cursor
-	map = window.make.tilemap({ key: "map" }); //load map
-	tileset = map.addTilesetImage("level3", "tiles"); //
-	GLayer = map.createLayer("Tile Layer 1", tileset, 0, 0);
+	map3 = window.make.tilemap({ key: "map3" }); //load map
+	tileset = map3.addTilesetImage("level3", "tiles"); //
+	GLayer = map3.createLayer("Tile Layer 1", tileset, 0, 0);
 	GLayer.setScale(1.4);
-	WLayer = map.createLayer("objects", tileset, 0, 0);
+	WLayer = map3.createLayer("objects", tileset, 0, 0);
 	WLayer.setCollisionByProperty({ collided: true });
 	WLayer.setScale(1.4);
 }
@@ -147,13 +147,6 @@ function coinset3() {
 	});
 }
 
-function shootarrows3() {
-	shootdown3();
-	shootup3();
-	shootleft3();
-	shootright3();
-}
-
 function createLevel3(window) {
 	createanims(window); //create animations
 	setlayers3(window);
@@ -161,7 +154,7 @@ function createLevel3(window) {
 	doors3(window);
 	physicsgroups(window);
 	coinset3();
-	physicscolliders(window);
+	physicscolliders3(window);
 	window.time.addEvent({
 		delay: 1000,
 		callback: shootarrows3, // The function to execute

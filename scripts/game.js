@@ -22,7 +22,7 @@ class Level2Scene extends Phaser.Scene {
     }
 
     preload() {
-        preloadLevel1(this);
+        // preloadLevel1(this);
     }
 
     create() {
@@ -49,7 +49,7 @@ class Level3Scene extends Phaser.Scene {
     }
 
     update() {
-        updateLevel1(this);
+        updateLevel3(this);
     }
 }
 
@@ -130,9 +130,109 @@ function updateLevel1(window) {
             window.time.paused = false;
             window.anims.resumeAll();
             window.scene.stop();
-            window.scene.start("Level2");
+            window.scene.start("Level3");
+        }, 2000);
+        hp = 99999;
+        coinscollected = 0;
+    }
+}
+
+
+function updateLevel1(window) {
+    if (charselect === "wizzard") wizzardanimation();
+    if (charselect === "knight") knightanimation();
+    if (charselect === "rogue") rogueanimation();
+    playerMovement();
+    console.log(hp);
+    console.log(coinscollected);
+    console.log(coinlocations1.length);
+    if (hp <= 0) {
+        window.physics.pause();
+        window.tweens.pauseAll();
+        window.time.paused = true;
+        window.anims.pauseAll();
+        setTimeout(() => {
+            window.physics.resume();
+            window.tweens.resumeAll();
+            window.time.paused = false;
+            window.anims.resumeAll();
+            window.scene.stop();
+            window.scene.start();
         }, 2000);
         hp = 5;
+        coinscollected = 0;
+    }
+    console.log("x: " + player.x + " y:" + player.y);
+    if (
+        player.x > 60 &&
+        player.x < 80 &&
+        player.y > 125 &&
+        player.y < 130 &&
+        coinscollected == coinlocations1.length
+    ) {
+        window.physics.pause();
+        window.tweens.pauseAll();
+        window.time.paused = true;
+        window.anims.pauseAll();
+        setTimeout(() => {
+            window.physics.resume();
+            window.tweens.resumeAll();
+            window.time.paused = false;
+            window.anims.resumeAll();
+            window.scene.stop();
+            window.scene.start("Level3");
+        }, 2000);
+        hp = 99999;
+        coinscollected = 0;
+    }
+}
+
+
+function updateLevel3(window) {
+    if (charselect === "wizzard") wizzardanimation();
+    if (charselect === "knight") knightanimation();
+    if (charselect === "rogue") rogueanimation();
+    playerMovement();
+    console.log(hp);
+    console.log(coinscollected);
+    console.log(coinlocations3.length);
+    if (hp <= 0) {
+        window.physics.pause();
+        window.tweens.pauseAll();
+        window.time.paused = true;
+        window.anims.pauseAll();
+        setTimeout(() => {
+            window.physics.resume();
+            window.tweens.resumeAll();
+            window.time.paused = false;
+            window.anims.resumeAll();
+            window.scene.stop();
+            window.scene.start();
+        }, 2000);
+        hp = 5;
+        coinscollected = 0;
+    }
+    console.log("x: " + player.x + " y:" + player.y);
+    if (
+        player.x > 60 &&
+        player.x < 80 &&
+        player.y > 125 &&
+        player.y < 130 &&
+        coinscollected == coinlocations3.length
+    ) {
+        window.physics.pause();
+        window.tweens.pauseAll();
+        window.time.paused = true;
+        window.anims.pauseAll();
+        setTimeout(() => {
+            window.physics.resume();
+            window.tweens.resumeAll();
+            window.time.paused = false;
+            window.anims.resumeAll();
+            window.scene.stop();
+            window.scene.start("Level3");
+        }, 2000);
+        hp = 99999;
         coinscollected = 0;
     }
 }

@@ -52,7 +52,7 @@ function coinset1() {
 	});
 }
 
-function physicscolliders(window) {
+function physicscolliders1(window) {
 	player.setImmovable(true); // make player immovable by projectiles
 	window.physics.add.collider(
 		coins,
@@ -105,13 +105,129 @@ function physicscolliders(window) {
 		function (player, fireball) {
 			fireball.setActive(false);
 			fireball.setVisible(false);
-			if (charselect != "wizzard")
-				hp -= 2;
+			if (charselect != "wizzard") hp -= 2;
 		},
 		null,
 		window
 	);
-
+}
+function physicscolliders1(window) {
+	player.setImmovable(true); // make player immovable by projectiles
+	window.physics.add.collider(
+		coins,
+		player,
+		function (player, coin) {
+			coin.setActive(false);
+			coin.setVisible(false);
+			coin.disableBody(true, true);
+			coinscollected += 1;
+			if (coinscollected == coinlocations1.length)
+				closeddoorimg.visible = false;
+		},
+		null,
+		window
+	);
+	window.physics.add.collider(
+		arrows,
+		WLayer,
+		function (arrow) {
+			arrow.setActive(false);
+			arrow.setVisible(false);
+		},
+		null,
+		window
+	);
+	window.physics.add.collider(
+		fireballs,
+		WLayer,
+		function (arrow) {
+			arrow.setActive(false);
+			arrow.setVisible(false);
+		},
+		null,
+		window
+	);
+	window.physics.add.collider(
+		arrows,
+		player,
+		function (player, arrow) {
+			arrow.setActive(false);
+			arrow.setVisible(false);
+			hp--;
+		},
+		null,
+		window
+	);
+	window.physics.add.collider(
+		fireballs,
+		player,
+		function (player, fireball) {
+			fireball.setActive(false);
+			fireball.setVisible(false);
+			if (charselect != "wizzard") hp -= 2;
+		},
+		null,
+		window
+	);
+}
+function physicscolliders3(window) {
+	player.setImmovable(true); // make player immovable by projectiles
+	window.physics.add.collider(
+		coins,
+		player,
+		function (player, coin) {
+			coin.setActive(false);
+			coin.setVisible(false);
+			coin.disableBody(true, true);
+			coinscollected += 1;
+			if (coinscollected == coinlocations3.length)
+				closeddoorimg.visible = false;
+		},
+		null,
+		window
+	);
+	window.physics.add.collider(
+		arrows,
+		WLayer,
+		function (arrow) {
+			arrow.setActive(false);
+			arrow.setVisible(false);
+		},
+		null,
+		window
+	);
+	window.physics.add.collider(
+		fireballs,
+		WLayer,
+		function (arrow) {
+			arrow.setActive(false);
+			arrow.setVisible(false);
+		},
+		null,
+		window
+	);
+	window.physics.add.collider(
+		arrows,
+		player,
+		function (player, arrow) {
+			arrow.setActive(false);
+			arrow.setVisible(false);
+			hp--;
+		},
+		null,
+		window
+	);
+	window.physics.add.collider(
+		fireballs,
+		player,
+		function (player, fireball) {
+			fireball.setActive(false);
+			fireball.setVisible(false);
+			if (charselect != "wizzard") hp -= 2;
+		},
+		null,
+		window
+	);
 }
 
 function createLevel1(window) {
@@ -121,7 +237,7 @@ function createLevel1(window) {
 	doors1(window);
 	physicsgroups(window);
 	coinset1();
-	physicscolliders(window);
+	physicscolliders1(window);
 	window.time.addEvent({
 		delay: 1000,
 		callback: shootarrows1, // The function to execute
