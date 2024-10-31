@@ -31,7 +31,6 @@ class Level2Scene extends Phaser.Scene {
 
 	update() {
 		updateLevel2(this);
-		console.log("level3");
 	}
 }
 
@@ -74,17 +73,21 @@ function playerMovement() {
 	player.setVelocity(0); // Reset both velocityX and velocityY
 
 	if (cursors.left.isDown) {
-		player.setVelocityX(-160);
+		if (charselect != "rogue") player.setVelocityX(-160);
+		else player.setVelocityX(-250);
 		player.setFlipX(true);
 	} else if (cursors.right.isDown) {
-		player.setVelocityX(160);
+		if (charselect != "rogue") player.setVelocityX(160);
+		else player.setVelocityX(250);
 		player.setFlipX(false);
 	} else player.setVelocityX(0);
 
 	if (cursors.up.isDown) {
-		player.setVelocityY(-160);
+		if (charselect != "rogue") player.setVelocityY(-160);
+		else player.setVelocityY(-250);
 	} else if (cursors.down.isDown) {
-		player.setVelocityY(160);
+		if (charselect != "rogue") player.setVelocityY(160);
+		else player.setVelocityY(250);
 	} else player.setVelocityY(0);
 }
 
@@ -109,7 +112,8 @@ function updateLevel1(window) {
 			window.scene.stop();
 			window.scene.start();
 		}, 2000);
-		hp = 5;
+		hp = 20;
+		if (charselect == "knight") hp = 40;
 		coinscollected = 0;
 	}
 	console.log("x: " + player.x + " y:" + player.y);
@@ -132,7 +136,8 @@ function updateLevel1(window) {
 			window.scene.stop();
 			window.scene.start("Level2");
 		}, 2000);
-		hp = 99999;
+		hp = 20;
+		if (charselect == "knight") hp = 40;
 		coinscollected = 0;
 	}
 }
@@ -158,7 +163,8 @@ function updateLevel2(window) {
 			window.scene.stop();
 			window.scene.start();
 		}, 2000);
-		hp = 5;
+		hp = 20;
+		if (charselect == "knight") hp = 40;
 		coinscollected = 0;
 	}
 	console.log("x: " + player.x + " y:" + player.y);
@@ -181,7 +187,8 @@ function updateLevel2(window) {
 			window.scene.stop();
 			window.scene.start("Level3");
 		}, 2000);
-		hp = 99999;
+		hp = 20;
+		if (charselect == "knight") hp = 40;
 		coinscollected = 0;
 	}
 }
@@ -207,27 +214,28 @@ function updateLevel3(window) {
 			window.scene.stop();
 			window.scene.start();
 		}, 2000);
-		hp = 5;
+		hp = 20;
+		if (charselect == "knight") hp = 40;
 		coinscollected = 0;
 	}
 	console.log("x: " + player.x + "y:" + player.y);
-	if (
-		player.x > 415 &&
-		player.x < 440 &&
-		player.y > 205 &&
-		player.y < 213 &&
-		coinscollected == coinlocations3.length
-	) {
+	if (coinscollected == coinlocations3.length) {
 		window.physics.pause();
 		window.tweens.pauseAll();
 		window.time.paused = true;
 		window.anims.pauseAll();
 		setTimeout(() => {
 			location.href = "/win.html"; // Redirect to win page
-        }, 500);
-    }
+		}, 500);
+	}
 }
 
-document.getElementById("wizzbutton").addEventListener("click", () => {charselect = "wizzard"});
-document.getElementById("roguebutton").addEventListener("click", () => {charselect = "rogue"});
-document.getElementById("knightbutton").addEventListener("click", () => {charselect = "knight"});
+document.getElementById("wizzbutton").addEventListener("click", () => {
+	charselect = "wizzard";
+});
+document.getElementById("roguebutton").addEventListener("click", () => {
+	charselect = "rogue";
+});
+document.getElementById("knightbutton").addEventListener("click", () => {
+	charselect = "knight";
+});

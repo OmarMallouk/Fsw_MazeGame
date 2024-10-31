@@ -50,7 +50,7 @@ function shootright1() {
 			arrow.setActive(true);
 			arrow.setVisible(true);
 			arrow.setPosition(location[0], location[1]);
-			arrow.setVelocityX(150);
+			arrow.setVelocityY(150);
 		}
 	});
 }
@@ -58,14 +58,12 @@ function shootupFireball1() {
 	var fireball;
 	shootfireballuplocations1.forEach((location) => {
 		fireball = fireballs.get();
-		
-
 		if (fireball) {
 			fireball.setAngle(-90);
 			fireball.setActive(true);
 			fireball.setVisible(true);
 			fireball.setPosition(location[0], location[1]);
-			fireball.setVelocityX(-250);
+			fireball.setVelocityY(-250);
 		}
 	});
 }
@@ -103,13 +101,12 @@ function shootrightFireball1() {
 	var fireball;
 	shootfireballrightlocations1.forEach((location) => {
 		fireball = fireballs.get();
-		
 		if (fireball) {
-			fireball.setAngle(-90);
+			fireball.setAngle(0);
 			fireball.setActive(true);
 			fireball.setVisible(true);
 			fireball.setPosition(location[0], location[1]);
-			fireball.setVelocityY(250);
+			fireball.setVelocityX(250);
 		}
 	});
 }

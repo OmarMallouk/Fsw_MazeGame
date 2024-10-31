@@ -52,17 +52,15 @@ function coinset1() {
 	});
 }
 
-
 function updateHearts() {
-    for (let i = 0; i < maxHP; i++) {
-        if (i < hp) {
-            hearts[i].setTexture('fullheart');
-        } else {
-            hearts[i].setTexture('emptyheart');
-        }
-    }
+	for (let i = 0; i < hp; i++) {
+		if (i < hp) {
+			hearts[i].setTexture("fullheart");
+		} else {
+			hearts[i].setTexture("emptyheart");
+		}
+	}
 }
-
 
 function physicscolliders1(window) {
 	player.setImmovable(true); // make player immovable by projectiles
@@ -193,8 +191,8 @@ function physicscolliders3(window) {
 			coin.setVisible(false);
 			coin.disableBody(true, true);
 			coinscollected += 1;
-			if (coinscollected == coinlocations3.length)
-				closeddoorimg.visible = false;
+			// if (coinscollected == coinlocations3.length)
+			// 	closeddoorimg.visible = false;
 		},
 		null,
 		window
@@ -243,10 +241,6 @@ function physicscolliders3(window) {
 	);
 }
 
-let hearts = [];
-const maxHP = 100;
-let hp = maxHP;
-
 function createLevel1(window) {
 	createanims(window); //create animations
 	setlayers1(window);
@@ -256,17 +250,15 @@ function createLevel1(window) {
 	coinset1();
 	physicscolliders1(window);
 
-	for (let i = 0; i < maxHP; i++) {
-        const heart = window.add.image(30 + i * 40, 30, 'fullheart');
-        hearts.push(heart);
-    }
-
+	// for (let i = 0; i < hp; i++) {
+	//     const heart = window.add.image(30 + i * 40, 30, 'fullheart');
+	//     hearts.push(heart);
+	// }
 
 	window.time.addEvent({
 		delay: 1000,
-		callback: shootarrows1, // The function to execute
+		callback: shootfireballs1, // The function to execute
 		callbackScope: window, // The scope in which to execute the function
 		loop: true, // Set to true to repeat the event
 	});
 }
-

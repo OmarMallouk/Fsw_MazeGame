@@ -151,7 +151,7 @@ function createLevel3(window) {
 	createanims(window); //create animations
 	setlayers3(window);
 	playersetup3(window);
-	doors3(window);
+	// doors3(window);
 	physicsgroups(window);
 	coinset3();
 	physicscolliders3(window);
