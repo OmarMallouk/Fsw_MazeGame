@@ -72,6 +72,7 @@ function physicscolliders1(window) {
 			coin.setVisible(false);
 			coin.disableBody(true, true);
 			coinscollected += 1;
+			score.setText(`${coinscollected} / ${coinlocations1.length}`);
 			if (coinscollected == coinlocations1.length)
 				closeddoorimg.visible = false;
 		},
@@ -132,6 +133,7 @@ function physicscolliders2(window) {
 			coin.setVisible(false);
 			coin.disableBody(true, true);
 			coinscollected += 1;
+			score.setText(`${coinscollected} / ${coinlocations2.length}`);
 			if (coinscollected == coinlocations2.length)
 				closeddoorimg.visible = false;
 		},
@@ -191,8 +193,7 @@ function physicscolliders3(window) {
 			coin.setVisible(false);
 			coin.disableBody(true, true);
 			coinscollected += 1;
-			// if (coinscollected == coinlocations3.length)
-			// 	closeddoorimg.visible = false;
+			score.setText(`${coinscollected} / ${coinlocations3.length}`);
 		},
 		null,
 		window
@@ -249,12 +250,10 @@ function createLevel1(window) {
 	physicsgroups(window);
 	coinset1();
 	physicscolliders1(window);
-
-	// for (let i = 0; i < hp; i++) {
-	//     const heart = window.add.image(30 + i * 40, 30, 'fullheart');
-	//     hearts.push(heart);
-	// }
-
+	score = window.add.text(550, 20, `${coinscollected} / ${coinlocations1.length}`, {
+		font: '16px Arial',
+		fill: '#ffffff'
+	});
 	window.time.addEvent({
 		delay: 1000,
 		callback: shootfireballs1, // The function to execute

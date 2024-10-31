@@ -3,6 +3,7 @@ var mapselect = "map1";
 
 var player;
 
+var score
 var arrows;
 var fireballs; // physics groups
 var coins;

@@ -1,14 +1,8 @@
 function preloadLevel3(window) {
-	window.load.image('arrows', 'assets/sprites/projectiles/arrow.png'); 
+	window.load.image("arrows", "assets/sprites/projectiles/arrow.png");
 	window.load.tilemapTiledJSON("map3", "assets/tilemaps/level3.json");
-	window.load.image(
-		"tiles",
-		"assets/sprites/Environment/dungeon.png"
-	);
-	window.load.image(
-		"fullheart",
-		"assets/sprites/Environment/fullheart.png"
-	);
+	window.load.image("tiles", "assets/sprites/Environment/dungeon.png");
+	window.load.image("fullheart", "assets/sprites/Environment/fullheart.png");
 	window.load.image(
 		"emptyheart",
 		"assets/sprites/Environment/emptyheart.png"
@@ -17,10 +11,7 @@ function preloadLevel3(window) {
 		"closeddoor",
 		"assets/sprites/Environment/closeddoor.png"
 	);
-	window.load.image(
-		"opendoor",
-		"assets/sprites/Environment/opendoor.png"
-	);
+	window.load.image("opendoor", "assets/sprites/Environment/opendoor.png");
 	window.load.spritesheet(
 		"knight-idle-sheet",
 		"assets/sprites/Heroes/Knight/Idle/Idle-Sheet.png",
@@ -130,9 +121,9 @@ function playersetup3(window) {
 }
 
 function doors3(window) {
-	opendooorimg = window.add.image(438, 226,"opendoor");
+	opendooorimg = window.add.image(438, 226, "opendoor");
 	opendooorimg.setScale(1.4);
-	closeddoorimg = window.add.image(438, 226,"closeddoor");
+	closeddoorimg = window.add.image(438, 226, "closeddoor");
 	closeddoorimg.setScale(1.4);
 }
 
@@ -155,6 +146,15 @@ function createLevel3(window) {
 	physicsgroups(window);
 	coinset3();
 	physicscolliders3(window);
+	score = window.add.text(
+		550,
+		20,
+		`${coinscollected} / ${coinlocations1.length}`,
+		{
+			font: "16px Arial",
+			fill: "#ffffff",
+		}
+	);
 	window.time.addEvent({
 		delay: 1000,
 		callback: shootarrows3, // The function to execute
