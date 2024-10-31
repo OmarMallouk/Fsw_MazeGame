@@ -9,7 +9,7 @@ var coins;
 
 var closeddoorimg;
 
-var hp = 99999;
+// var hp = 99999;
 var coinscollected = 0;
 var totalhp = 99999;
 var state = "idle";

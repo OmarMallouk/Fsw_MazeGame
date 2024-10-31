@@ -8,7 +8,7 @@ function shootup1() {
 			arrow.setActive(true); //activate object
 			arrow.setVisible(true); //make visible
 			arrow.setPosition(location[0], location[1]); //position
-			arrow.setVelocityY(-250); //velocity
+			arrow.setVelocityY(-150); //velocity
 		}
 	});
 }
@@ -22,7 +22,7 @@ function shootdown1() {
 			arrow.setActive(true);
 			arrow.setVisible(true);
 			arrow.setPosition(location[0], location[1]);
-			arrow.setVelocityY(250);
+			arrow.setVelocityY(150);
 		}
 	});
 }
@@ -36,7 +36,7 @@ function shootleft1() {
 			arrow.setActive(true);
 			arrow.setVisible(true);
 			arrow.setPosition(location[0], location[1]);
-			arrow.setVelocityX(-250);
+			arrow.setVelocityX(-150);
 		}
 	});
 }
@@ -50,7 +50,7 @@ function shootright1() {
 			arrow.setActive(true);
 			arrow.setVisible(true);
 			arrow.setPosition(location[0], location[1]);
-			arrow.setVelocityX(250);
+			arrow.setVelocityX(150);
 		}
 	});
 }
@@ -120,8 +120,10 @@ function shootfireballs1() {
 	shootrightFireball1();
 }
 function shootarrows1() {
+	if (hp > 0) {
 	shootdown1();
 	shootup1();
 	shootleft1();
 	shootright1();
+	}
 }

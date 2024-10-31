@@ -93,7 +93,7 @@ function updateLevel1(window) {
 	if (charselect === "knight") knightanimation();
 	if (charselect === "rogue") rogueanimation();
 	playerMovement();
-	console.log(hp);
+	console.log("Player HP:", hp);
 	console.log(coinscollected);
 	console.log(coinlocations1.length);
 	if (hp <= 0) {
@@ -210,12 +210,12 @@ function updateLevel3(window) {
 		hp = 5;
 		coinscollected = 0;
 	}
-	console.log("x: " + player.x + " y:" + player.y);
+	console.log("x: " + player.x + "y:" + player.y);
 	if (
-		player.x > 60 &&
-		player.x < 80 &&
-		player.y > 125 &&
-		player.y < 130 &&
+		player.x > 415 &&
+		player.x < 440 &&
+		player.y > 205 &&
+		player.y < 213 &&
 		coinscollected == coinlocations3.length
 	) {
 		window.physics.pause();
@@ -223,16 +223,9 @@ function updateLevel3(window) {
 		window.time.paused = true;
 		window.anims.pauseAll();
 		setTimeout(() => {
-			window.physics.resume();
-			window.tweens.resumeAll();
-			window.time.paused = false;
-			window.anims.resumeAll();
-			window.scene.stop();
-			window.scene.start("Level1");
-		}, 2000);
-		hp = 99999;
-		coinscollected = 0;
-	}
+			location.href = "/win.html"; // Redirect to win page
+        }, 500);
+    }
 }
 
 document.getElementById("wizzbutton").addEventListener("click", () => {charselect = "wizzard"});

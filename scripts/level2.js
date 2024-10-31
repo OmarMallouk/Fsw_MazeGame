@@ -149,103 +149,12 @@ function coinset2() {
 	});
 }
 
-// function physicsgroups(window) {
-//     // can be used across levels
-//     arrows = window.physics.add.group({
-//         defaultKey: "arrows",
-//         maxSize: -1, //infinite arrows, set number to specify amount
-//     });
 
-//     fireballs = window.physics.add.group({
-//         defaultKey: "fireball-anim",
-//         maxSize: -1,
-//     });
 
-//     coins = window.physics.add.group({
-//         defaultKey: "coin-sheet",
-//         maxSize: -1,
-//     });
-// }
 
-function coinset2() {
-    coinlocations2.forEach((location) => {
-        coin = coins.get();
-        coin.setActive(true);
-        coin.setVisible(true);
-        coin.setPosition(location[0], location[1]);
-        coin.play("coin-anim");
-        coin.scale = 1.2;
-    });
-}
-
-// function physicscolliders(window) {
-//     player.setImmovable(true); // make player immovable by projectiles
-//     window.physics.add.collider(
-//         coins,
-//         player,
-//         function (player, coin) {
-//             coin.setActive(false);
-//             coin.setVisible(false);
-//             coin.disableBody(true, true);
-//             coinscollected += 1;
-//             if (coinscollected == coinlocations1.length)
-//                 closeddoorimg.visible = false;
-//         },
-//         null,
-//         window
-//     );
-//     window.physics.add.collider(
-//         arrows,
-//         WLayer,
-//         function (arrow) {
-//             arrow.setActive(false);
-//             arrow.setVisible(false);
-//         },
-//         null,
-//         window
-//     );
-//     window.physics.add.collider(
-//         fireballs,
-//         WLayer,
-//         function (arrow) {
-//             arrow.setActive(false);
-//             arrow.setVisible(false);
-//         },
-//         null,
-//         window
-//     );
-//     window.physics.add.collider(
-//         arrows,
-//         player,
-//         function (player, arrow) {
-//             arrow.setActive(false);
-//             arrow.setVisible(false);
-//             hp--;
-//         },
-//         null,
-//         window
-//     );
-//     window.physics.add.collider(
-//         fireballs,
-//         player,
-//         function (player, fireball) {
-//             fireball.setActive(false);
-//             fireball.setVisible(false);
-//             if (charselect != "wizzard")
-//                 hp -= 2;
-//         },
-//         null,
-//         window
-//     );
-//     window.time.addEvent({
-//         delay: 1000,
-//         callback: shootarrows1, // The function to execute
-//         callbackScope: window, // The scope in which to execute the function
-//         loop: true, // Set to true to repeat the event
-//     });
-// }
 
 function createLevel2(window) {
+   
     createanims(window); //create animations
     setlayers2(window);
     playersetup2(window);
@@ -254,11 +163,11 @@ function createLevel2(window) {
     coinset2();
     physicscolliders2(window);
 
-    window.time.addEvent({
-		delay: 1000,
-		callback: shootarrows2, // The function to execute
-		callbackScope: window, // The scope in which to execute the function
-		loop: true, // Set to true to repeat the event
-	});
+    
+    arrowTimer = window.time.addEvent({
+        delay: 1000, // Adjust this value to control the speed of the arrows
+        callback: shootarrows2, // Ensure this function exists for Level 2
+        callbackScope: window, // The scope in which to execute the function
+        loop: true, // Set to true to repeat the event
+    });
 }
-
