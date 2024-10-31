@@ -8,19 +8,40 @@ body{
     color: #fff;
 }
 h1 {
-    font-size: 3em;
-}
-
-
-.balloon-container {
     position: fixed;
-    width: 100%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: #FF6F61;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+.balloon-container-left {
+    position: fixed;
+    width: 50%;
     height: 100%;
-    overflow: hidden;
-    top: 0;
+    bottom: 0;
     left: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
+/* Right Balloon Container */
+.balloon-container-right {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* Balloon Styling and Animation */
 .balloon {
     position: absolute;
     bottom: -50px;
@@ -43,13 +64,14 @@ h1 {
     transform: translateX(-50%);
 }
 
+/* Animation */
 @keyframes float {
     0% {
         transform: translateY(0) translateX(calc(var(--i) * 20px - 40px));
         opacity: 1;
     }
     100% {
-        transform: translateY(-110vh) translateX(calc(var(--i) * 20px - 40px));
+        transform: translateY(-80vh) translateX(calc(var(--i) * 20px - 40px));
         opacity: 0;
     }
 }
