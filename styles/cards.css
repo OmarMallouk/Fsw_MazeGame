@@ -1,9 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap");
-
+@font-face {
+	font-family: "Press Start 2P";
+	src: url("fonts/BebasNeue-Regular.ttf") format("truetype");
+}
 .heroName {
 	text-align: center;
 	font-weight: bold;
 	padding-top: 10px;
+	color: #f5f5f5;
+	font-size: 30px;
+	font-family:Georgia, 'Times New Roman', Times, serif;
+
 }
 
 .cards {
@@ -11,7 +17,7 @@
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
-	font-family: "Baloo Paaji 2", cursive;
+	font-family:Georgia, 'Times New Roman', Times, serif;
 	flex-wrap: wrap;
 }
 
@@ -34,10 +40,12 @@
 	align-items: center;
 	width: 300px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+	
 
 	color: white;
 	flex-shrink: 0;
 	flex-grow: 0;
+	
 }
 
 .card__name {
@@ -77,7 +85,7 @@
 }
 
 .btn {
-	background: none;
+	background: #4265a5;
 	border: none;
 	cursor: pointer;
 	line-height: 1.5;
