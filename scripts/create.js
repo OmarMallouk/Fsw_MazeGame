@@ -111,12 +111,7 @@ function physicscolliders(window) {
 		null,
 		window
 	);
-	window.time.addEvent({
-		delay: 1000,
-		callback: shootarrows1, // The function to execute
-		callbackScope: window, // The scope in which to execute the function
-		loop: true, // Set to true to repeat the event
-	});
+
 }
 
 function createLevel1(window) {
@@ -127,4 +122,10 @@ function createLevel1(window) {
 	physicsgroups(window);
 	coinset1();
 	physicscolliders(window);
+	window.time.addEvent({
+		delay: 1000,
+		callback: shootarrows1, // The function to execute
+		callbackScope: window, // The scope in which to execute the function
+		loop: true, // Set to true to repeat the event
+	});
 }

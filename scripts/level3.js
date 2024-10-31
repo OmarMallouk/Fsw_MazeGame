@@ -111,8 +111,6 @@ function preloadLevel3(window) {
 	);
 }
 
-
-
 function setlayers3(window) {
 	cursors = window.input.keyboard.createCursorKeys(); // setup cursor
 	map = window.make.tilemap({ key: "map" }); //load map
@@ -138,7 +136,23 @@ function doors3(window) {
 	closeddoorimg.setScale(1.4);
 }
 
+function coinset3() {
+	coinlocations3.forEach((location) => {
+		coin = coins.get();
+		coin.setActive(true);
+		coin.setVisible(true);
+		coin.setPosition(location[0], location[1]);
+		coin.play("coin-anim");
+		coin.scale = 1.2;
+	});
+}
 
+function shootarrows3() {
+	shootdown3();
+	shootup3();
+	shootleft3();
+	shootright3();
+}
 
 function createLevel3(window) {
 	createanims(window); //create animations
@@ -148,4 +162,10 @@ function createLevel3(window) {
 	physicsgroups(window);
 	coinset3();
 	physicscolliders(window);
+	window.time.addEvent({
+		delay: 1000,
+		callback: shootarrows3, // The function to execute
+		callbackScope: window, // The scope in which to execute the function
+		loop: true, // Set to true to repeat the event
+	});
 }
