@@ -25,7 +25,7 @@ img {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: rgb(253, 180, 180);
+	color: rgb(248, 249, 250);
 }
 
 input {
@@ -50,8 +50,11 @@ a {
 }
 
 .nav-logo {
-	padding: 3px;
-	height: 100%;
+	width: 120px;
+}
+
+.logoSvg{
+	background-color: #a5bbcf;
 }
 
 .nav-search {
